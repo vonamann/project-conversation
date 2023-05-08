@@ -67,3 +67,8 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+# Ignore vim tmp files
+*.swp
+*.swo
+*.swn
