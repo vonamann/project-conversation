@@ -14,4 +14,15 @@
       <%= f.submit 'Change status'  %>
     <% end %>
   </div>
+
+  <div class="comments">
+    <div class="comments-container">
+      <% if @project.comments.empty? %>
+        No comments yet
+      <% else %>
+        <div>Total comments: <%= @project.comments.count %></div>
+      <% end %>
+    </div>
+    <div><%= link_to 'Leave a new comment', new_comment_path %></div>
+  </div>
 </div>

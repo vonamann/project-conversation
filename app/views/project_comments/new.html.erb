@@ -1,0 +1,8 @@
+<h3>Add new comment</h3>
+<%= form_with url: comments_path, method: :post do |f| %>
+  <div class="form-group">
+    <%= f.label :comment_text, 'Text' %>
+    <%= f.text_area :comment_text %>
+  </div>
+  <%= f.submit 'Add' %>
+<% end %>
