@@ -1,0 +1,10 @@
+<% if @histories.empty? %>
+  <div class="notice">Project history is empty</div>
+<% else %>
+  <% @histories.each do |history| %>
+    <div class="history">
+      <div class="date"><%= history.created_at.strftime(DATE_FORMAT) %></div>
+      <div class="status">New status: <span class="value"><%= history.status %></span></div>
+    </div>
+  <% end %>
+<% end %>
