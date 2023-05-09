@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :histories, -> { order('created_at DESC') }, class_name: 'ProjectHistory', dependent: :destroy
+  has_many :comments,  -> { order('created_at DESC') }, class_name: 'ProjectComment', dependent: :destroy
   validates :status, inclusion: { in: PROJECT_STATUSES }
 
   # Not sure if it’s a correct way to implement singleton
