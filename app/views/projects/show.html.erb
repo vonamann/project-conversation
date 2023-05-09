@@ -1,4 +1,4 @@
-<div class="status">
+<div class="project-status">
   <div class="current-status">
     Project status: <span class="value"><%= @project.status %></span>
   </div>
@@ -17,8 +17,8 @@
 </div>
 
 
-<div class="comments">
-  <div class="comments-info">
+<div class="project-comments">
+  <div class="info">
     <% if @project.comments.empty? %>
       No comments yet
     <% else %>
