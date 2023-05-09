@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Project do
   before do
-    @project = Project.create!
+    @project = Project.first_or_create
     @original_histories_count = @project.histories.count
   end
 
