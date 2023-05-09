@@ -4,6 +4,7 @@
   </div>
   <% unless @project.histories.empty? %>
     <div>Status last changed at <%= @project.histories.first.created_at.strftime(DATE_FORMAT) %></div>
+    <%= link_to 'View history', history_path, class: 'history-link' %>
   <% end %>
   <div class="change-status">
     <%= form_with method: :patch do |f| %>
