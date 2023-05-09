@@ -9,7 +9,6 @@
   <div class="change-status">
     <%= form_with method: :patch do |f| %>
       <div class="form-group">
-        <label>New status</label>
         <%= f.select :status, [''] + PROJECT_STATUSES.find_all{|s| s != @project.status}.map{|s| [s, s]} %>
       </div>
       <%= f.submit 'Change status'  %>
