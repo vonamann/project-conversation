@@ -22,7 +22,7 @@
     <% if @project.comments.empty? %>
       No comments yet
     <% else %>
-      <div>Total comments: <%= @project.comments.count %></div>
+      <div>Total comments: <%= @project.comments.count %> (<%= link_to 'View all', comments_path %>)</div>
     <% end %>
   </div>
   <div><%= link_to 'Leave a new comment', new_comment_path, class: 'new-comment-link' %></div>
