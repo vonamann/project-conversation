@@ -6,17 +6,35 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <% #stylesheet_link_tag "application" %>
+    <style type="text/css">
+    html, body { margin: 0; padding: 0; font-family: Helvetica, Arial, sans-serif; background: #ddd; }
+    .header { padding: 20px 25px; background: #369; color: #acf; }
+    .container { padding: 20px 25px; background: #ddd; color: #333; }
+    .flash { margin: 5px 0; padding: 5px 7px; text-align: center; border: 1px solid gray; background: #ccc; }
+    .flash.flash-notice { border-color: green; background: #cfc; color: green; }
+    .flash.flash-alert  { border-color: red;   background: #fcc; color: red; }
+    h1 { margin: 5px 0; }
+    h3 { margin: 3px 0; }
+    label { display: block; }
+    .new-comment-link, .back-link { display: block; margin: 5px 0; }
+    span.value { font-weight: bold; }
+
+    .change-status { margin-top: 10px; }
+    .project-comments { margin-top: 10px; }
+    </style>
   </head>
 
   <body>
+    <div class="header">
+      <h1>The Project</h1>
+    </div>
     <div class="container">
       <% flash.each do |type, msg| %>
         <div class="flash flash-<%= type %>">
           <%= msg %>
         </div>
       <% end %>
-      <h1>The Project</h1>
       <%= yield %>
     </div>
   </body>
