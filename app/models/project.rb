@@ -4,6 +4,11 @@ class Project < ApplicationRecord
 
   after_initialize { self.status = PROJECT_DEFAULT_STATUS }
 
+  # Not sure if it’s a correct way to implement singleton
+  def self.singleton
+    Project.first_or_create
+  end
+
   def change_status_to(new_status)
     Project.transaction do
       # Do nothing if new status is the same as the old one for simplicity
