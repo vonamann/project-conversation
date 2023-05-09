@@ -10,7 +10,7 @@ class Project < ApplicationRecord
   def change_status_to(new_status)
     Project.transaction do
       # Do nothing if new status is the same as the old one for simplicity
-      unless status == new_status
+      unless status == new_status.to_s
         update(status: new_status)
         raise ActiveRecord::Rollback unless errors.empty?
         history = histories.new(status: new_status)
